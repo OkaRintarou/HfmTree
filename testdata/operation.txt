@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#pragma once
+
+#include "HuffmanTree.h"
+#include <stdio.h>
+
+#define STRL 30
+
+typedef char string[STRL];
+
+typedef enum Function {
+    INVALID,
+    CODETABLE='C',
+    DECODING = 'D',
+    ENCODING = 'E',
+    GEFFILE = 'G',
+    INITIALIZATION = 'I',
+    PRINT = 'P',
+    QUIT = 'Q',
+    TREEPRINTING = 'T'
+}Function;
+
+void codetable(HuffmanTree* pHT, HuffmanCode* pHC, int* n);
+void initialization(HuffmanTree* pHT, HuffmanCode* pHC, int* n);
+void encoding(HuffmanTree* pHT, HuffmanCode* pHC, int* n);
+void decoding(HuffmanTree* pHT, int* n);
+void print();
+void treePrint(HuffmanTree* pHT, int* n);
+void geffile(HuffmanTree* pHT, HuffmanCode* pHC, int* n);
+char* mfgets(char* buffer, int count, FILE* stream);
